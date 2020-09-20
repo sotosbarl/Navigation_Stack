@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <include file="$(find differential_robot_2dnav)/launch/configuration_gazebo.launch"/>
+  <include file="$(find amcl)/examples/amcl_diff.launch"/>
+  <include file="$(find diff_wheeled_robot_control)/launch/keyboard_teleop.launch"/>
+
+</launch>
