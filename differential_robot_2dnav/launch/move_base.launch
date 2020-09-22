@@ -1,12 +1,10 @@
 <?xml version="1.0" ?>
 <launch>
-<!-- Run the map server -->
- <node name="map_server" pkg="map_server" type="map_server" args="$(find diff_wheeled_robot_gazebo)/maps/test.yaml" />
- <include file="$(find amcl)/examples/amcl_diff.launch" >
- </include>
+
+
  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
  <rosparam file="$(find differential_robot_2dnav)/launch/costmap_common_params.yaml" command="load" ns="global_costmap"  />
-<rosparam file="$(find differential_robot_2dnav)/launch/costmap_common_params.yaml" command="load" ns="local_costmap" />
+ <rosparam file="$(find differential_robot_2dnav)/launch/costmap_common_params.yaml" command="load" ns="local_costmap" />
  <rosparam file="$(find differential_robot_2dnav)/launch/local_costmap_params.yaml" command="load" />
  <rosparam file="$(find differential_robot_2dnav)/launch/global_costmap_params.yaml" command="load" />
  <rosparam file="$(find differential_robot_2dnav)/launch/base_local_planner_params.yaml" command="load" />
